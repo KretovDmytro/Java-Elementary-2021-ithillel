@@ -1,5 +1,9 @@
 package task04.exercise02;
 
+/**
+ * @author Kretov D.V
+ */
+
 public class Employee {
 
     int id;
@@ -22,5 +26,9 @@ public class Employee {
     public void countCalk() {
         count++;
         this.id = count;
+    }
+
+    public int getId() {
+        return id;
     }
 }
