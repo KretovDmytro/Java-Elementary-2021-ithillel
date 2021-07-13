@@ -2,7 +2,7 @@ package task07.exercise03;
 
 public enum Color {
 
-    RED(255, 0, 0),
+    RED(2, 250, 1),
     GREEN("00FF00"),
     BLUE("0000FF"),
     WHITE(255, 255, 255),
@@ -50,6 +50,9 @@ public enum Color {
             String hex = Integer.toHexString(i).toUpperCase();
             if (i == 0) {
                 hex += 0;
+            }
+            if (hex.length() == 1) {
+                builder.append("0");
             }
             builder.append(hex);
         }

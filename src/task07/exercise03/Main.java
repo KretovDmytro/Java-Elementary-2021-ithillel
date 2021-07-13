@@ -9,6 +9,5 @@ public class Main {
 
         System.out.printf("Color %s in DEC: %s, %s, %s %n", Color.GREEN, Color.GREEN.getR(), Color.GREEN.getG(), Color.GREEN.getB());
         System.out.printf("Color %s in DEC: %s, %s, %s %n", Color.BLUE, Color.BLUE.getR(), Color.BLUE.getG(), Color.BLUE.getB());
-
     }
 }
