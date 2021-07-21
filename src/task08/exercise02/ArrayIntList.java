@@ -12,7 +12,6 @@ public class ArrayIntList implements IntList {
     }
 
 
-
     @Override
     public String toString() {
         return Arrays.toString(array);
@@ -96,7 +95,7 @@ public class ArrayIntList implements IntList {
     @Override
     public boolean contains(Integer value) {
         for (Integer integer : array) {
-            if (integer != null && integer == value) {
+            if ((integer == null && value == null) || (integer != null && integer.equals(value))) {
                 return true;
             }
         }
