@@ -11,6 +11,8 @@ public class ArrayIntList implements IntList {
         return index < array.length;
     }
 
+
+
     @Override
     public String toString() {
         return Arrays.toString(array);
@@ -80,7 +82,7 @@ public class ArrayIntList implements IntList {
     }
 
     @Override
-    public Integer getIndexByValue(int value) {
+    public Integer getIndexByValue(Integer value) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null && array[i] == value) {
                 System.out.print("First match of value with index: ");
@@ -92,7 +94,7 @@ public class ArrayIntList implements IntList {
     }
 
     @Override
-    public boolean contains(int value) {
+    public boolean contains(Integer value) {
         for (Integer integer : array) {
             if (integer != null && integer == value) {
                 return true;
@@ -102,7 +104,7 @@ public class ArrayIntList implements IntList {
     }
 
     @Override
-    public void removeValue(int value) {
+    public void removeValue(Integer value) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == value) {
                 Integer[] array2 = new Integer[array.length - 1];

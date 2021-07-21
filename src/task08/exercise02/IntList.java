@@ -29,11 +29,11 @@ public interface IntList {
     /**
      * @return index of first value occurrence. Return null if no value in the list.
      */
-    Integer getIndexByValue(int value);
+    Integer getIndexByValue(Integer value);
 
-    boolean contains(int value);
+    boolean contains(Integer value);
 
-    void removeValue(int value);
+    void removeValue(Integer value);
 
     void removeByIndex(int index);
 
