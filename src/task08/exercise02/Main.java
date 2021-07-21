@@ -2,87 +2,45 @@ package task08.exercise02;
 
 import java.util.Arrays;
 
-public class Main implements IntList {
+public class Main {
 
-    private Integer[] ar = new Integer[13];
 
     public static void main(String[] args) {
-        Main mainObject = new Main();
 
-        mainObject.add(2);
-        System.out.printf("%n%n");
-        mainObject.insert(5, -15);
-        System.out.printf("%n%n");
+        IntList mainObject = new ArrayIntList();
 
-    }
+        mainObject.add(1);
+        mainObject.add(-2);
+        mainObject.add(7);
+        mainObject.add(0);
+        mainObject.add(9);
 
-    @Override
-    public void add(int i) {
-//        System.out.println(Arrays.toString(ar) + " Start array");
-//        for (; i < ar.length; i++) {
-//            int temporaryValue = ar[i];
-//            int temporaryValue2 = ar[i + 1];
-//            ar[2+1] = temporaryValue;
-//            temporaryValue = temporaryValue2;
-//        }
-//        ar[i] = 55;
-//        System.out.println(Arrays.toString(ar) + " Array after method \"add\"");
-    }
+        Notice.printArray("After use method \"ADD\" we have: " + mainObject);
 
-    @Override
-    public void insert(int index, int value) {
-        System.out.println(Arrays.toString(ar) + " Start array");
-        ar[index] = value;
-        System.out.println(Arrays.toString(ar) + " Array after method \"insert\" ");
-    }
+        mainObject.insert(6, -15);
 
-    @Override
-    public void set(int index, int value) {
-        System.out.println(Arrays.toString(ar) + " Start array");
-    }
+        Notice.printArray("After use method \"insert\" we have: " + mainObject);
 
-    @Override
-    public int size() {
-        return 0;
-    }
+        mainObject.set(8, -100);
 
-    @Override
-    public int capacity() {
-        return 0;
-    }
+        Notice.printArray("After use method \"set\" we have: " + mainObject);
 
-    @Override
-    public int getByIndex(int index) {
-        return 0;
-    }
+        System.out.printf("Actual number of elements in the list is: %s %n", mainObject.size());
 
-    @Override
-    public Integer getIndexByValue(int value) {
-        return null;
-    }
+        System.out.printf("Array now can contain: %s elements %n", mainObject.capacity());
 
-    @Override
-    public boolean contains(int value) {
-        return false;
-    }
+        System.out.printf("Get your: %s %n", mainObject.getByIndex(8));
 
-    @Override
-    public void removeValue(int value) {
+        System.out.printf("%s %n", mainObject.getIndexByValue(-15));
 
-    }
+        System.out.println(mainObject.contains(-100));
 
-    @Override
-    public void removeByIndex(int index) {
+        mainObject.removeValue(7);
 
-    }
+        mainObject.removeByIndex(2);
 
-    @Override
-    public IntList subList(int fromIndex, int toIndex) {
-        return null;
-    }
+        System.out.printf("New list is: %s %n", mainObject.subList(2, 6));
 
-    @Override
-    public int[] toArray() {
-        return new int[0];
+        System.out.printf("New ARRAY is: %s", Arrays.toString(mainObject.toArray()));
     }
 }

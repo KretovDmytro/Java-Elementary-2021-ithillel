@@ -2,17 +2,17 @@ package task08.exercise02;
 
 public interface IntList {
 
-    void add(int i);
+    void add(Integer i);
 
     /**
      * Insert element by index. All elements from the right will be shifted to right
      */
-    void insert(int index, int value);
+    void insert(int index, Integer value);
 
     /**
      * Overwrite value by index
      */
-    void set(int index, int value);
+    void set(int index, Integer value);
 
     /**
      * @return actual number of elements in the list
@@ -24,16 +24,16 @@ public interface IntList {
      */
     int capacity();
 
-    int getByIndex(int index);
+    Integer getByIndex(int index);
 
     /**
      * @return index of first value occurrence. Return null if no value in the list.
      */
-    Integer getIndexByValue(int value);
+    Integer getIndexByValue(int Integer);
 
-    boolean contains(int value);
+    boolean contains(int Integer);
 
-    void removeValue(int value);
+    void removeValue(int Integer);
 
     void removeByIndex(int index);
 
