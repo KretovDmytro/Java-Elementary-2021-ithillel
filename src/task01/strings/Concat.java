@@ -22,7 +22,7 @@ public class Concat {
         StringBuilder newString = new StringBuilder();
 
         for (int i = 0; i < myString.length; i++) {
-            newString = newString.append("|").append(myString[i]);
+            newString.append("|").append(myString[i]);
         }
         return newString.delete(0, 1).toString();
     }
