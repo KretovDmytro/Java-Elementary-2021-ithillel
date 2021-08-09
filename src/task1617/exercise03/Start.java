@@ -13,7 +13,7 @@ package task1617.exercise03;
 
 public class Start {
     public static void main(String[] args) {
-        BaseRemove baseRemove = new BaseRemove("Hello thereee", "ee");
+        BaseRemove baseRemove = new BaseRemove("Hello thereee", "llo.");
         System.out.println(baseRemove.modifyString());
     }
 }
