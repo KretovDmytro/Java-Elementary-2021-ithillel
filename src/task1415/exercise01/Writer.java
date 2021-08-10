@@ -1,4 +1,4 @@
-package task1415;
+package task1415.exercise01;
 
 import java.util.List;
 
@@ -6,11 +6,15 @@ public class Writer implements Runnable {
 
     List<Integer> writerList;
     private final int DELAY;
+    private final int MAX_VALUE;
+    private final int MIN_VALUE;
 
 
-    public Writer(int delay, List<Integer> writerList) {
+    public Writer(int minValue, int maxValue, int delay, List<Integer> writerList) {
         this.writerList = writerList;
         this.DELAY = delay;
+        this.MIN_VALUE = minValue;
+        this.MAX_VALUE = maxValue;
     }
 
     @Override
@@ -21,7 +25,7 @@ public class Writer implements Runnable {
     private void addValuesInList() {
         try {
             Thread.sleep(DELAY);
-            writerList.add(getIntNumber(0, 100));
+            writerList.add(getIntNumber(MIN_VALUE, MAX_VALUE));
             System.out.println("Список заполнен: " + writerList);
         } catch (InterruptedException e) {
             e.printStackTrace();

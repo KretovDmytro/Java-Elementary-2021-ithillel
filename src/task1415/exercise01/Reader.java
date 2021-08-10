@@ -1,4 +1,4 @@
-package task1415;
+package task1415.exercise01;
 
 import java.util.List;
 
