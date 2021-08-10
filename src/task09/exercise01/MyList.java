@@ -30,5 +30,3 @@ public class MyList {
         return newList;
     }
 }
-
-
