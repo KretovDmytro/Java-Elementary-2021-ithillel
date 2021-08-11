@@ -11,7 +11,5 @@ public class DataListCenter {
     public DataListCenter(Integer... value) {
         Collections.addAll(integerList, value);
     }
-
-
 }
 
