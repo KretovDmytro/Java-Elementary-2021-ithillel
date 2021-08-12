@@ -2,9 +2,16 @@ package task1415.exercise02;
 
 import java.util.Arrays;
 
-public class ArrayFiller implements Runnable {
+public class ArrayFillerMultipleStreams implements Runnable {
 
     private String[] array = new String[20_000_000];
+    private int lowerLimit;
+    private int upperLimit;
+
+    public ArrayFillerMultipleStreams(int lowerLimit, int upperLimit) {
+        this.lowerLimit = lowerLimit;
+        this.upperLimit = upperLimit;
+    }
 
     @Override
     public void run() {
@@ -12,12 +19,9 @@ public class ArrayFiller implements Runnable {
     }
 
     private void fillArray() {
-        long startTime = System.currentTimeMillis();
-        for (int i = 0; i < array.length; i++) {
+        for (int i = lowerLimit; i < upperLimit; i++) {
             array[i] = checkForRemainder(i);
         }
-        long finishTime = System.currentTimeMillis();
-        System.out.println("Затраченое времячко с одним потоком: " + (finishTime - startTime));
     }
 
     private String checkForRemainder(int dividend) {
