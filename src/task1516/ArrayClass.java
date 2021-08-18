@@ -1,10 +1,8 @@
 package task1516;
 
-import java.util.Arrays;
-
 public class ArrayClass {
 
-    private int[] array = new int[4000000];
+    private int[] array = new int[20_000_000];
 
     public ArrayClass(int minValue, int maxValue) {
         for (int i = 0; i < array.length; i++) {
@@ -20,9 +18,5 @@ public class ArrayClass {
 
     public int[] getArray() {
         return array;
-    }
-
-    public void printArray() {
-        System.out.println(Arrays.toString(array));
     }
 }

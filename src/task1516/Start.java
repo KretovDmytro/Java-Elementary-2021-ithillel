@@ -1,5 +1,8 @@
 package task1516;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * @author Kretov D.V
  * @version Дан массив из 10 млн целых чисел (программа сама заполняет его, без мнопоточности). Нужно посчитать среднее арифметическое с помощью многопоточности.
@@ -16,12 +19,12 @@ package task1516;
 public class Start {
     public static void main(String[] args) {
 
-        ArrayClass arrayClass = new ArrayClass(0, 20);
+        ArrayClass arrayClass = new ArrayClass(0, 100);
 
-        Average a1 = new Average(0, 1_000_000, arrayClass.getArray());
-        Average a2 = new Average(1_000_001, 2_000_000, arrayClass.getArray());
-        Average a3 = new Average(2_000_001, 3_000_000, arrayClass.getArray());
-        Average a4 = new Average(3_000_001, 4_000_000, arrayClass.getArray());
+        Average a1 = new Average(0, 5_000_000, arrayClass.getArray());
+        Average a2 = new Average(5_000_001, 10_000_000, arrayClass.getArray());
+        Average a3 = new Average(10_000_001, 15_000_000, arrayClass.getArray());
+        Average a4 = new Average(15_000_001, 20_000_000, arrayClass.getArray());
 
         Thread t1 = new Thread(a1);
         Thread t2 = new Thread(a2);
@@ -43,8 +46,16 @@ public class Start {
             e.printStackTrace();
         }
 
+        String averageStr = a1.calculateTheTotalArithmeticMean(a1.getAverage(),
+                a2.getAverage(),
+                a3.getAverage(),
+                a4.getAverage());
 
+        Logger logger = Logger.getLogger(Start.class.getName());
+        logger.log(Level.INFO, "the total arithmetic mean in equals: " + averageStr);
+
+        long finishTime = System.currentTimeMillis();
+        String elapsedTime = String.valueOf(finishTime - startTime);
+        logger.log(Level.INFO, "milliseconds have passed: " + elapsedTime + " ms");
     }
-
-
 }
