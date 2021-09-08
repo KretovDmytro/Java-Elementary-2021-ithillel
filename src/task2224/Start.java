@@ -1,4 +1,4 @@
-package task2224.exercise01;
+package task2224;
 
 /**
  * @author Kretov D.V
@@ -10,8 +10,15 @@ package task2224.exercise01;
 public class Start {
 
     public static void main(String[] args) {
+
+        //01
         SquaredClass squaredClass = new SquaredClass();
         squaredClass.findEvenNumbersAndSquareThem();
         squaredClass.printListResult();
+
+        //02
+        ClassPredicat classPredicat = new ClassPredicat("!", "ASD", "tyu", "fgh", "dfg", "cvb", "wer", "asd", "asd", "dfsdf", "gg", "ffFF", "FFF", "ddd", "sss", "SSS");
+
+
     }
 }
