@@ -3,6 +3,7 @@ package task2325;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 /**
  * @author Kretov D.V
@@ -40,5 +41,20 @@ public class StartPoint {
         Math m = constr.newInstance();
         int i = (int) m.pow(2, 4);
         System.out.println(i);
+        System.out.println("---------");
+
+
+        //restartFirst WORK ONLY ON 8 JAVA!!!!!!!!!
+        String str = new String();
+        Class<String> clazzString = String.class;
+
+        char[] arrayChar = new char[]{'a', 'a', 'a', 'a'};
+
+        Field[] fieldsStringClass = clazzString.getDeclaredFields();
+
+        fieldsStringClass[0].setAccessible(true);
+        System.out.println(Arrays.toString((char[]) fieldsStringClass[0].get(str)));
+        fieldsStringClass[0].set(str, arrayChar);
+        System.out.println(Arrays.toString((char[]) fieldsStringClass[0].get(str)));
     }
 }
